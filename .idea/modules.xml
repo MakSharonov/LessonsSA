@@ -13,6 +13,10 @@
       <module fileurl="file://$PROJECT_DIR$/p0131menusimple/p0131menusimple.iml" filepath="$PROJECT_DIR$/p0131menusimple/p0131menusimple.iml" />
       <module fileurl="file://$PROJECT_DIR$/p0141menuadv/p0141menuadv.iml" filepath="$PROJECT_DIR$/p0141menuadv/p0141menuadv.iml" />
       <module fileurl="file://$PROJECT_DIR$/p0151contexmenu/p0151contexmenu.iml" filepath="$PROJECT_DIR$/p0151contexmenu/p0151contexmenu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/p0161dinamiclayout/p0161dinamiclayout.iml" filepath="$PROJECT_DIR$/p0161dinamiclayout/p0161dinamiclayout.iml" />
+      <module fileurl="file://$PROJECT_DIR$/p0171dinamiclayout2/p0171dinamiclayout2.iml" filepath="$PROJECT_DIR$/p0171dinamiclayout2/p0171dinamiclayout2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/p0181dinamiclayout3/p0181dinamiclayout3.iml" filepath="$PROJECT_DIR$/p0181dinamiclayout3/p0181dinamiclayout3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/p0191simplecalculator/p0191simplecalculator.iml" filepath="$PROJECT_DIR$/p0191simplecalculator/p0191simplecalculator.iml" />
     </modules>
   </component>
 </project>

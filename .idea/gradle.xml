@@ -24,6 +24,11 @@
             <option value="$PROJECT_DIR$/p0171dinamiclayout2" />
             <option value="$PROJECT_DIR$/p0181dinamiclayout3" />
             <option value="$PROJECT_DIR$/p0191simplecalculator" />
+            <option value="$PROJECT_DIR$/p0201simpleanimation" />
+            <option value="$PROJECT_DIR$/p0211twoactivity" />
+            <option value="$PROJECT_DIR$/p0221oneactivitystate" />
+            <option value="$PROJECT_DIR$/p0231twoactivitystate" />
+            <option value="$PROJECT_DIR$/p0241intentfilter" />
           </set>
         </option>
       </GradleProjectSettings>

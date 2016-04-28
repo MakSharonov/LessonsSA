@@ -22,6 +22,22 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity android:name=".ActivityDate"
+            android:label="Basic date">
+            <intent-filter>
+                <action android:name="com.example.intent.action.showdate" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ActivityDateEx"
+            android:label="Extended date">
+            <intent-filter>
+                <action android:name="com.example.intent.action.showdate" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

@@ -102,10 +102,68 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()) {
             case R.id.btnAll:
                 Log.d(LOG_TAG, "--- Все записи: ---");
-                db.query("mytable", null, null, null, null, null, null);
+                c = db.query("mytable", null, null, null, null, null, null);
+                break;
+            case R.id.btnFunc:
+                Log.d(LOG_TAG, "--- Функция: " + sFunc + " ---");
+                columns = new String[] { sFunc };
+                c = db.query("mytable", columns, null, null, null, null, null);
+                break;
+            case R.id.btnPeople:
+                Log.d(LOG_TAG, "--- Население больше " + sPeople + " ---");
+                selection = "people > ?";
+                selectionArgs = new String[] { sPeople };
+                c = db.query("mytable", null, selection, selectionArgs, null, null, null);
+                break;
+            case R.id.btnGroup:
+                Log.d(LOG_TAG, "--- Население по региону ---");
+                columns = new String[] { "region", "sum(people) as people" };
+                groupBy = "region";
+                c = db.query("mytable", columns, null, null, groupBy, null, null);
+                break;
+            case R.id.btnHaving:
+                Log.d(LOG_TAG, "--- Регионы с населением больше " + sRegionPeople + " ---");
+                columns = new String[] { "region", "sum(people) as people" };
+                groupBy = "region";
+                having = "sum(people) > " + sRegionPeople;
+                c = db.query("mytable", columns, null, null, groupBy, having, null);
+                break;
+            case R.id.btnSort:
+                switch (rgSort.getCheckedRadioButtonId()) {
+                    case R.id.rName:
+                        Log.d(LOG_TAG, "--- Сортировка по наименованию ---");
+                        orderBy = "name";
+                        break;
+                    case R.id.rPeople:
+                        Log.d(LOG_TAG, "--- Сортировка по населению ---");
+                        orderBy = "people";
+                        break;
+                    case R.id.rRegion:
+                        Log.d(LOG_TAG, "--- Сортировка по региону ---");
+                        orderBy = "region";
+                        break;
+                }
+                c = db.query("mytable", null, null, null, null, null, orderBy);
                 break;
         }
 
+        if (c != null) {
+            if (c.moveToFirst()) {
+                String str;
+                do {
+                    str = "";
+                    for (String cn : c.getColumnNames()) {
+                        str = str.concat(cn + " = " + c.getString(c.getColumnIndex(cn)) + "; ");
+                    }
+                    Log.d(LOG_TAG, str);
+                }while (c.moveToNext());
+            }
+            c.close();
+        } else {
+            Log.d(LOG_TAG, "Cursor is null");
+        }
+
+        dbHelper.close();
     }
 
     class DBHelper extends SQLiteOpenHelper {
